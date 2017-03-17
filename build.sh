@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t ubuntu_with_opensource_drivers .
+docker build -t jewzaam/slic3r:ubuntu .
