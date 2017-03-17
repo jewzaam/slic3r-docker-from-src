@@ -1,4 +1,3 @@
 #!/bin/sh
 
-(cat Dockerfile ; echo "RUN adduser $LOGNAME") \
-    | docker build -t $USER/slic3r:fedora -
+docker build -t ubuntu_with_opensource_drivers .

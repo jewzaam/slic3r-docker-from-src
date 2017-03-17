@@ -1,3 +1,6 @@
 #!/bin/sh
 
-docker run -i -t --rm -e DISPLAY=$DISPLAY -u $USER -v /tmp/.X11-unix:/tmp/.X11-unix $USER/slic3r:fedora "$@"
+COMMAND=/bin/bash
+
+xhost + # allow connections to X server
+docker run --privileged -e "DISPLAY=unix:0.0" -v="/tmp/.X11-unix:/tmp/.X11-unix:rw"  -i -t ubuntu_with_opensource_drivers $COMMAND
